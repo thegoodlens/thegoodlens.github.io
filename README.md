@@ -1,4 +1,4 @@
-# Photography Gallery — endless scroll, multi-view, tag filters
+# "The Good Lens" Theme — endless scroll, multi-view, tag filters
 
 Plain HTML/CSS/JS, no build step — same deploy process as before.
 
@@ -14,7 +14,7 @@ Plain HTML/CSS/JS, no build step — same deploy process as before.
 - **Endless scroll** — every photo is already on the page; each one lazy-loads
   from the network only as it nears the viewport (`loading="lazy"`) and fades
   in on scroll, so nothing loads all at once.
-- **5 views** — Small / Medium / Large grid, Masonry, and List. Switch anytime
+- **4 views** —  Medium / Large / Extra Large grid, and List. Switch anytime
   via the buttons in the control bar.
 - **Tag filters** — built automatically from each photo's tags. Selecting
   multiple tags narrows results to photos matching **all** selected tags
