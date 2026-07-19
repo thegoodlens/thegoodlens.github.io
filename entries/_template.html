@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- EDIT: page title (shows in browser tab / search results) -->
+  <title>Entry title — The Good Lens</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<!-- EDIT: data-entry-file must exactly match the filename you saved this
+     page as, AND match the "file" value you add for it in entries-data.js.
+     This is what lets tags and "More to read" find their way to this page. -->
+<body class="has-hero" data-entry-file="your-file-name.html">
+
+  <!-- Leave these three exactly as-is — same on every entry page -->
+  <div class="progress-bar" id="progress-bar"></div>
+  <div class="topbar">
+    <div class="topbar__inner">
+      <a class="topbar__mark" href="../index.html">The Good Lens</a>
+      <div class="topbar__right">
+        <a href="../about.html">About</a>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Hero banner =====
+       EDIT: image, date, title, and description. "Time to read" fills
+       itself in automatically based on word count — leave that span empty. -->
+  <div class="entry-hero">
+    <img class="entry-hero__img" src="../assets/images/your-photo.jpg" alt="">
+    <div class="entry-hero__scrim"></div>
+    <div class="entry-hero__content">
+      <p class="entry-hero__meta">Month Day, Year &nbsp;·&nbsp; <span id="read-time"></span></p>
+      <h1 class="entry-hero__title">Entry title</h1>
+      <p class="entry-hero__desc">A one or two sentence description — shown here on the banner, like a subtitle.</p>
+    </div>
+  </div>
+
+  <!-- Leave as-is — tags fill in automatically from entries-data.js -->
+  <div class="entry-tags" id="entry-tags"></div>
+
+  <article class="entry-body">
+
+    <!-- ============================================================
+         Everything below is building blocks — use any combination,
+         in any order, delete what you don't need for this entry.
+         ============================================================ -->
+
+    <!-- A plain paragraph of writing -->
+    <p>Write here. This is a normal paragraph — use as many as the story needs.</p>
+
+    <!-- An opening note (small italic line) — good for setting up
+         a numbered sequence below, like "a week of the same walk..." -->
+    <p class="opening-note">An italic setup line, if a sequence follows.</p>
+
+    <!-- A photo woven into flowing writing, with a small caption -->
+    <figure class="inline-photo">
+      <img src="../assets/images/your-photo.jpg" alt="Describe the photo">
+      <figcaption>a short caption for this photo</figcaption>
+    </figure>
+
+    <!-- A quoted or pivotal line, set apart from the paragraph flow —
+         good for scripture, or a single sentence you want to land quietly -->
+    <blockquote>a line you want to set apart.</blockquote>
+
+    <!-- A numbered photo-moment — copy this whole block for each photo
+         in a sequence -->
+    <div class="moment">
+      <figure class="moment__photo">
+        <img src="../assets/images/your-photo.jpg" alt="Describe the photo">
+      </figure>
+      <p class="moment__caption">this photo's own short reflection line.</p>
+    </div>
+
+    <!-- Closing paragraph -->
+    <p>Write here.</p>
+
+  </article>
+
+  <!-- Leave as-is — automatically shows up to 3 entries that share tags
+       with this one (or, if none share a tag, simply other entries) -->
+  <div class="related-posts" id="related-posts"></div>
+
+  <!-- Leave this footer exactly as-is — same on every page -->
+  <footer class="site">
+    &copy; <span id="year"></span> The Good Lens. &nbsp;·&nbsp;
+    <a href="https://github.com/thegoodlens/thegoodlens.github.io" target="_blank" rel="noopener">Fork this theme</a>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="../assets/js/entries-data.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

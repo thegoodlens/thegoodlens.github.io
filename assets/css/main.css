@@ -1,0 +1,482 @@
+/* ================================
+   The Good Lens
+   ================================ */
+
+:root {
+  --paper: #fbfaf7;
+  --ink: #232220;
+  --ink-soft: #6b665e;
+  --ink-faint: #a39d8f;
+  --line: #e6e2d8;
+  --accent: #b3811f;
+  --accent-soft: #f3e8d2;
+
+  --serif-display: "Fraunces", Georgia, serif;
+  --serif-body: "Lora", Georgia, serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+[data-theme="dark"] {
+  --paper: #18170f;
+  --ink: #ece7d9;
+  --ink-soft: #a39d8c;
+  --ink-faint: #6e6a5c;
+  --line: #35322690;
+  --accent: #dcae5a;
+  --accent-soft: #362c17;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+a.underline { border-bottom: 1px solid var(--ink-faint); }
+a.underline:hover { color: var(--accent); border-color: var(--accent); }
+
+.wrap {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Shared page chrome ---------- */
+
+body { padding-bottom: 52px; }
+
+/* Icon-only sun/moon theme toggle, used on every page */
+
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--ink-soft);
+}
+
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ---------- Topbar — fixed/static, shared by every page ---------- */
+
+.topbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 20;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  transition: background 0.3s ease;
+}
+
+.topbar.is-scrolled {
+  background: var(--paper);
+}
+
+.topbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1160px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.topbar__mark {
+  font-family: var(--serif-display);
+  font-weight: 500;
+  font-size: 1.1rem;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity 0.3s ease, transform 0.3s ease, color 0.3s ease;
+  pointer-events: none;
+}
+
+.topbar.is-scrolled .topbar__mark {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+.topbar__mark:hover { color: var(--accent); }
+
+.topbar__right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: var(--sans);
+  font-size: 13px;
+}
+
+.topbar__right > a { color: var(--ink-soft); transition: color 0.3s ease; }
+.topbar__right > a:hover { color: var(--accent); }
+
+/* Over a hero photo, pre-scroll: force white/translucent chrome for legibility.
+   Once scrolled past the hero, revert to normal theme colors. */
+
+body.has-hero .topbar:not(.is-scrolled) .topbar__right > a {
+  color: rgba(255,255,255,0.88);
+}
+body.has-hero .topbar:not(.is-scrolled) .theme-toggle {
+  color: #fff;
+  border-color: rgba(255,255,255,0.4);
+}
+
+/* ---------- Homepage masthead ---------- */
+
+.home-masthead {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 16px 32px 52px;
+}
+
+.home-masthead h1 {
+  font-family: var(--serif-display);
+  font-weight: 500;
+  font-size: clamp(2.4rem, 6vw, 3.4rem);
+  margin: 0 0 12px;
+}
+
+.home-masthead p {
+  font-family: var(--sans);
+  font-size: 15px;
+  color: var(--ink-soft);
+  max-width: 480px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ---------- Entry grid (image-forward cards) ---------- */
+
+.entry-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px 28px;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 32px 20px;
+}
+
+.entry-card { display: block; }
+.entry-card.is-hidden { display: none; }
+
+.entry-card__thumb {
+  overflow: hidden;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+
+.entry-card__thumb img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.entry-card:hover .entry-card__thumb img { transform: scale(1.03); }
+
+.entry-card__title {
+  font-family: var(--serif-display);
+  font-weight: 500;
+  font-size: 1.15rem;
+  line-height: 1.35;
+  margin: 0 0 6px;
+}
+
+.entry-card__title a:hover { color: var(--accent); }
+
+.entry-card__date {
+  font-family: var(--sans);
+  font-size: 13px;
+  color: var(--ink-faint);
+  margin: 0;
+}
+
+/* ---------- Pagination ---------- */
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 48px 24px 44px;
+  font-family: var(--sans);
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+.pagination button {
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: 100px;
+  padding: 7px 16px;
+  color: var(--ink-soft);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.pagination button:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+.pagination button:disabled { opacity: 0.35; cursor: default; }
+
+/* ---------- Reading progress bar ---------- */
+
+.progress-bar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  width: 0%;
+  background: var(--accent);
+  z-index: 30;
+  transition: width 0.1s linear;
+}
+
+/* ---------- Entry hero banner ---------- */
+
+.entry-hero {
+  position: relative;
+  height: 78vh;
+  min-height: 420px;
+  overflow: hidden;
+  background: #111;
+}
+
+.entry-hero__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.entry-hero__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.25) 45%, rgba(0,0,0,0) 70%);
+}
+
+.entry-hero__content {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 0 32px 44px;
+  max-width: 900px;
+}
+
+.entry-hero__meta {
+  font-family: var(--sans);
+  font-size: 13px;
+  color: rgba(255,255,255,0.85);
+  margin: 0 0 14px;
+}
+
+.entry-hero__title {
+  font-family: var(--serif-display);
+  font-weight: 500;
+  color: #fff;
+  font-size: clamp(2.2rem, 6vw, 3.6rem);
+  line-height: 1.1;
+  margin: 0 0 16px;
+}
+
+.entry-hero__desc {
+  font-family: var(--sans);
+  font-size: 16px;
+  color: rgba(255,255,255,0.85);
+  max-width: 60ch;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Quiet tag row, sits between the hero and the body copy */
+
+.entry-tags {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 22px 24px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+
+.entry-tags span {
+  border: 1px solid var(--line);
+  border-radius: 100px;
+  padding: 3px 11px;
+}
+
+.entry-body {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 28px 24px 60px;
+  font-size: 18px;
+}
+
+.entry-body p {
+  margin: 0 0 1.4em;
+  line-height: 1.85;
+}
+
+.entry-body .opening-note {
+  font-family: var(--sans);
+  font-size: 15px;
+  color: var(--ink-soft);
+  font-style: italic;
+  margin: 0 0 2em;
+}
+
+.entry-body blockquote {
+  margin: 2em 0;
+  padding-left: 22px;
+  border-left: 2px solid var(--accent);
+  font-style: italic;
+  color: var(--ink-soft);
+  font-size: 1.05em;
+  line-height: 1.8;
+}
+
+/* Flowing-style inline photo */
+
+.entry-body figure.inline-photo {
+  margin: 2.2em 0;
+}
+
+.entry-body figure.inline-photo img {
+  width: 100%;
+  border-radius: 2px;
+}
+
+.entry-body figure.inline-photo figcaption {
+  font-family: var(--sans);
+  font-size: 13px;
+  color: var(--ink-faint);
+  font-style: italic;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Numbered photo-moment style */
+
+.moment {
+  margin: 2.6em 0;
+}
+
+.moment__photo img {
+  width: 100%;
+  border-radius: 2px;
+  margin-bottom: 12px;
+}
+
+.moment__caption {
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--ink);
+  margin: 0;
+}
+
+/* ---------- About page ---------- */
+
+.page-masthead {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 16px 24px 8px;
+}
+
+.page-masthead h1 {
+  font-family: var(--serif-display);
+  font-weight: 500;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  margin: 0;
+}
+
+.about-body {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 24px 24px 100px;
+  font-size: 18px;
+}
+
+.about-body p { line-height: 1.85; margin: 0 0 1.4em; }
+
+/* ---------- "More to read" — related entries, end of each entry page ---------- */
+
+.related-posts {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 32px 24px 70px;
+  border-top: 1px solid var(--line);
+}
+
+.related-posts__label {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 0 0 20px;
+}
+
+.related-posts__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.related-posts__grid .entry-card {
+  flex: 0 1 190px;
+}
+
+.related-posts__grid .entry-card__title {
+  font-size: 1rem;
+}
+
+/* ---------- Footer ---------- */
+
+footer.site {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 15;
+  background: var(--paper);
+  padding: 14px 24px;
+  text-align: center;
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--ink-faint);
+}
+
+footer.site a:hover { color: var(--accent); }
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 560px) {
+  .entry-body { font-size: 17px; }
+  .entry-hero { height: 62vh; min-height: 340px; }
+  .related-posts__grid .entry-card { flex-basis: 140px; }
+  .entry-grid { grid-template-columns: 1fr; gap: 28px; }
+  .home-masthead { padding-top: 64px; padding-bottom: 36px; }
+  .page-masthead { padding-top: 64px; }
+}
+
+@media (min-width: 561px) and (max-width: 860px) {
+  .entry-grid { grid-template-columns: repeat(2, 1fr); }
+}

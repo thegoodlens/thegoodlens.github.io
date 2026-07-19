@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Good Lens</title>
+  <meta name="description" content="Photographs and reflections on gratitude, grace, and seeing clearly.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+  <!-- ===== Topbar (fixed) ===== -->
+  <div class="topbar">
+    <div class="topbar__inner">
+      <a class="topbar__mark" href="index.html">The Good Lens</a>
+      <div class="topbar__right">
+        <a href="about.html">About</a>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Masthead ===== -->
+  <div class="home-masthead">
+    <h1>The Good Lens</h1>
+    <!-- EDIT ME: suggested starting line, written from what you told me the
+         name means to you — change it to whatever feels like your own words. -->
+    <p>A purified lens sees grace everywhere. This is a record of trying — photographs and reflections on gratitude, grace, and the practice of seeing clearly.</p>
+  </div>
+
+  <!-- ===== Entry grid =====
+       Populated automatically from assets/js/entries-data.js — add a new
+       entry there (not here) and it'll appear on its own, newest first. -->
+  <main class="entry-grid" id="entry-grid"></main>
+
+  <!-- ===== Pagination ===== -->
+  <div class="pagination">
+    <button id="page-prev">Previous</button>
+    <span id="page-label">Page 1 of 1</span>
+    <button id="page-next">Next</button>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site">
+    &copy; <span id="year"></span> The Good Lens. &nbsp;·&nbsp;
+    <a href="https://github.com/thegoodlens/thegoodlens.github.io" target="_blank" rel="noopener">Fork this theme</a>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="assets/js/entries-data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

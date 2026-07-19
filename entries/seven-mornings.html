@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seven mornings — The Good Lens</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body class="has-hero" data-entry-file="seven-mornings.html">
+
+  <div class="progress-bar" id="progress-bar"></div>
+
+  <div class="topbar">
+    <div class="topbar__inner">
+      <a class="topbar__mark" href="../index.html">The Good Lens</a>
+      <div class="topbar__right">
+        <a href="../about.html">About</a>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Hero banner — thumbnail becomes the full-bleed image ===== -->
+  <div class="entry-hero">
+    <img class="entry-hero__img" src="../assets/images/hero-seven-mornings.jpg" alt="">
+    <div class="entry-hero__scrim"></div>
+    <div class="entry-hero__content">
+      <p class="entry-hero__meta">July 18, 2026 &nbsp;·&nbsp; <span id="read-time"></span></p>
+      <h1 class="entry-hero__title">Seven mornings</h1>
+      <p class="entry-hero__desc">A week of the same walk, the same hour, and what showed up differently each day — noted one photograph at a time.</p>
+    </div>
+  </div>
+
+  <div class="entry-tags" id="entry-tags"></div>
+
+  <article class="entry-body">
+
+    <p class="opening-note">the same walk, the same hour, for a week. i didn't go looking for anything in particular — only wanted to see what showed up differently each day, if I paid attention.</p>
+
+    <div class="moment">
+      <figure class="moment__photo">
+        <img src="https://picsum.photos/seed/goodlens-morning1/1200/800" alt="Mist over a quiet path at sunrise">
+      </figure>
+      <p class="moment__caption">the mist hadn't lifted yet. neither had I, if I'm honest — this one was more duty than devotion.</p>
+    </div>
+
+    <div class="moment">
+      <figure class="moment__photo">
+        <img src="https://picsum.photos/seed/goodlens-morning2/1200/800" alt="An old woman feeding street dogs">
+      </figure>
+      <p class="moment__caption">she does this every day, rain or not. nobody photographs her for it. I think that's exactly why it counts.</p>
+    </div>
+
+    <div class="moment">
+      <figure class="moment__photo">
+        <img src="https://picsum.photos/seed/goodlens-morning3/1200/800" alt="Light breaking through temple smoke">
+      </figure>
+      <p class="moment__caption">the smoke caught the light before the light reached me. grace arrives first where you're not looking.</p>
+    </div>
+
+    <div class="moment">
+      <figure class="moment__photo">
+        <img src="https://picsum.photos/seed/goodlens-morning4/1200/800" alt="A child running past, laughing">
+      </figure>
+      <p class="moment__caption">no reason for the laughing. that's the part I keep trying to relearn.</p>
+    </div>
+
+    <div class="moment">
+      <figure class="moment__photo">
+        <img src="https://picsum.photos/seed/goodlens-morning5/1200/800" alt="A cup of tea on a windowsill">
+      </figure>
+      <p class="moment__caption">the last morning, I almost didn't bring the camera. this was the one I'm most glad I kept.</p>
+    </div>
+
+    <p>seven days of the same walk taught me the same thing five different ways: it was never about finding something new. it was about staying long enough to actually see what was already there.</p>
+
+  </article>
+
+  <!-- ===== More to read — related entries, filled in automatically ===== -->
+  <div class="related-posts" id="related-posts"></div>
+
+  <footer class="site">
+    &copy; <span id="year"></span> The Good Lens. &nbsp;·&nbsp;
+    <a href="https://github.com/thegoodlens/thegoodlens.github.io" target="_blank" rel="noopener">Fork this theme</a>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="../assets/js/entries-data.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

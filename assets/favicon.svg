@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style>
+    .ring { fill: none; stroke: #232220; stroke-width: 2.4; }
+    .iris { fill: #b3811f; }
+    @media (prefers-color-scheme: dark) {
+      .ring { stroke: #ece7d9; }
+      .iris { fill: #dcae5a; }
+    }
+  </style>
+  <circle class="ring" cx="16" cy="16" r="12.5"/>
+  <circle class="iris" cx="16" cy="16" r="4.8"/>
+</svg>
