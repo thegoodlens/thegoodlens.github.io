@@ -11,11 +11,11 @@ everything in this folder (`index.html`, `about.html`, `.nojekyll`, `entries/`,
 
 ## Publishing a new entry — the whole workflow
 
-**1. Duplicate the template**
+**1. Duplicate the template: **
 Go into `entries/`, open `_template.html`, and save a copy with a new name —
 lowercase, hyphens, no spaces, e.g. `entries/the-rain-taught-me.html`.
 
-**2. Write it**
+**2. Write it: **
 Open your new file and fill in the marked `EDIT` spots:
 
 - **`data-entry-file`** on the `<body>` tag — must exactly match the
@@ -32,11 +32,11 @@ The two sample entries already in `entries/` (`flower-crushed-still-fragrant.htm
 — flowing style, and `seven-mornings.html` — numbered-moment style) are full
 working examples if you want to see one filled in before you start.
 
-**3. Add your photos**
+**3. Add your photos: **
 Upload image files into `assets/images/` (Add file → Upload files), then
 point each `<img src="...">` at `../assets/images/yourfile.jpg`.
 
-**4. Add ONE entry to `assets/js/entries-data.js`**
+**4. Add ONE entry to `assets/js/entries-data.js`: **
 This is the only other file you touch. Copy one of the existing objects in
 the list and edit it:
 
