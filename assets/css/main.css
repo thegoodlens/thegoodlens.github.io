@@ -103,13 +103,16 @@ body { padding-bottom: 52px; }
   font-family: var(--serif-display);
   font-weight: 500;
   font-size: 1.1rem;
+  transition: opacity 0.3s ease, transform 0.3s ease, color 0.3s ease;
+}
+
+body.is-home .topbar__mark {
   opacity: 0;
   transform: translateY(-6px);
-  transition: opacity 0.3s ease, transform 0.3s ease, color 0.3s ease;
   pointer-events: none;
 }
 
-.topbar.is-scrolled .topbar__mark {
+body.is-home .topbar.is-scrolled .topbar__mark {
   opacity: 1;
   transform: none;
   pointer-events: auto;
@@ -137,6 +140,10 @@ body.has-hero .topbar:not(.is-scrolled) .topbar__right > a {
 body.has-hero .topbar:not(.is-scrolled) .theme-toggle {
   color: #fff;
   border-color: rgba(255,255,255,0.4);
+}
+
+body.has-hero .topbar:not(.is-scrolled) .topbar__mark {
+  color: #fff;
 }
 
 /* ---------- Homepage masthead ---------- */
@@ -178,6 +185,7 @@ body.has-hero .topbar:not(.is-scrolled) .theme-toggle {
 .entry-card.is-hidden { display: none; }
 
 .entry-card__thumb {
+   display: block;
   overflow: hidden;
   border-radius: 6px;
   margin-bottom: 16px;
