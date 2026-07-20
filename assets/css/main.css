@@ -407,7 +407,7 @@ body.has-hero .topbar:not(.is-scrolled) .topbar__mark {
 .page-masthead {
   max-width: 640px;
   margin: 0 auto;
-  padding: 16px 24px 8px;
+  padding: 96px 24px 8px;
 }
 
 .page-masthead h1 {
@@ -482,7 +482,7 @@ footer.site a:hover { color: var(--accent); }
   .related-posts__grid .entry-card { flex-basis: 140px; }
   .entry-grid { grid-template-columns: 1fr; gap: 28px; }
   .home-masthead { padding-top: 64px; padding-bottom: 36px; }
-  .page-masthead { padding-top: 64px; }
+  /* ------- .page-masthead { padding-top: 64px; } ----*/
 }
 
 @media (min-width: 561px) and (max-width: 860px) {
