@@ -11,11 +11,11 @@ everything in this folder (`index.html`, `about.html`, `.nojekyll`, `entries/`,
 
 ## Publishing a new entry — the whole workflow
 
-**1. Duplicate the template: **
+**1. Duplicate the template**: 
 Go into `entries/`, open `_template.html`, and save a copy with a new name —
 lowercase, hyphens, no spaces, e.g. `entries/the-rain-taught-me.html`.
 
-**2. Write it: **
+**2. Write it**: 
 Open your new file and fill in the marked `EDIT` spots:
 
 - **`data-entry-file`** on the `<body>` tag — must exactly match the
