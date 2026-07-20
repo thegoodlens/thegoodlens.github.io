@@ -87,6 +87,15 @@ system preference on first visit. Over an entry's hero photo, the icon and
 color once you scroll past the hero. The header and footer stay fixed in
 place while scrolling, on every page.
 
+## The site name in the top bar
+
+On the **homepage only**, "The Good Lens" wordmark is hidden until you
+start scrolling — the big title already fills that role at the top, so the
+small version fades in once you scroll past it. On every other page (entry
+pages, About), the wordmark is visible immediately, no scrolling needed —
+white over an entry's hero photo for legibility, normal ink color
+everywhere else.
+
 ## File map
 
 ```
