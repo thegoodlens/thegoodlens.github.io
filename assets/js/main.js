@@ -70,14 +70,15 @@
   function byDateDesc(a, b) { return new Date(b.date) - new Date(a.date); }
 
   function entryCardHTML(entry) {
-    return (
-      '<article class="entry-card">' +
-        '<div class="entry-card__thumb"><img src="' + PREFIX + entry.thumb + '" alt=""></div>' +
-        '<h2 class="entry-card__title"><a href="' + PREFIX + 'entries/' + entry.file + '">' + entry.title + '</a></h2>' +
-        '<p class="entry-card__date">' + entry.dateDisplay + '</p>' +
-      '</article>'
-    );
-  }
+  var href = PREFIX + 'entries/' + entry.file;
+  return (
+    '<article class="entry-card">' +
+      '<a class="entry-card__thumb" href="' + href + '"><img src="' + PREFIX + entry.thumb + '" alt=""></a>' +
+      '<h2 class="entry-card__title"><a href="' + href + '">' + entry.title + '</a></h2>' +
+      '<p class="entry-card__date">' + entry.dateDisplay + '</p>' +
+    '</article>'
+  );
+}
 
   /* ---------- Entry page: fill in this entry's own tags ---------- */
 
