@@ -28,5 +28,13 @@ window.GOOD_LENS_ENTRIES = [
     dateDisplay: "July 10, 2026",
     thumb: "assets/images/thumb-flower.jpg",
     tags: ["gratitude", "grace"]
-  }
+  },
+  {
+  file: "humility-and-gratitude.html",
+  title: "Humility and Gratitude",
+  date: "2026-07-20",
+  dateDisplay: "July 20, 2026",
+  thumb: "assets/images/blessings1.jpg",
+  tags: ["gratitude", "humility"]
+}
 ];
