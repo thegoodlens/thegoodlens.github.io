@@ -261,8 +261,9 @@ body.has-hero .topbar:not(.is-scrolled) .topbar__mark {
 
 .entry-hero {
   position: relative;
-  height: 78vh;
-  min-height: 420px;
+  height: 100vh;
+  height: 100dvh;
+  min-height: 480px;
   overflow: hidden;
   background: #111;
 }
@@ -478,7 +479,7 @@ footer.site a:hover { color: var(--accent); }
 
 @media (max-width: 560px) {
   .entry-body { font-size: 17px; }
-  .entry-hero { height: 62vh; min-height: 340px; }
+  .entry-hero { height: 62vh; height: 62dvh; min-height: 340px; }
   .related-posts__grid .entry-card { flex-basis: 140px; }
   .entry-grid { grid-template-columns: 1fr; gap: 28px; }
   .home-masthead { padding-top: 64px; padding-bottom: 36px; }
