@@ -285,7 +285,7 @@ body.has-hero .topbar:not(.is-scrolled) .topbar__mark {
 .entry-hero__content {
   position: absolute;
   left: 0; right: 0; bottom: 0;
-  padding: 0 32px 44px;
+  padding: 0 32px 100px;
   max-width: 900px;
 }
 
